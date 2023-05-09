@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha --exit",
+    "test": "mocha test/",
     "test:awesome": "mocha --reporter mochawesome || true",
     "open:report": "open mochawesome-report/mochawesome.html",
     "sonar": "node sonar-project.js",
