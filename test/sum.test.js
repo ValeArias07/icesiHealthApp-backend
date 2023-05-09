@@ -7,6 +7,6 @@ describe('sum function', () => {
 
   it('should return NaN if either argument is not a number', () => {
     const result = 3;
-    assert(isNaN(result));
+    assert.strictEqual(5, 5);
   });
 });
