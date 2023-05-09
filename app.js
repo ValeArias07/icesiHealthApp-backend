@@ -2,14 +2,11 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     http = require('http'),
     fs = require('fs');
-
-
 const util = require('util')
 
 //var initDatabase = require('./scripts/init_database');
 var bootstrapDB = require('./scripts/bootstrapDB.js');
 var database = require('./scripts/database.js');
-
 
 var app = express();
 app.set('port', process.env.PORT || 8089);

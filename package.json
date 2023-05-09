@@ -2,16 +2,35 @@
   "name": "nodejs-patientdb-cloudant",
   "version": "0.1.0",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "mocha --exit",
+    "test:awesome": "mocha --reporter mochawesome || true",
+    "open:report": "open mochawesome-report/mochawesome.html",
+    "sonar": "node sonar-project.js",
+    "coverage": "nyc --reporter=lcov npm run test",
+    "coverage-lcov": "./node_modules/.bin/nyc -r cobertura -r text-summary -r lcov npm test",
+    "build": "webpack -p",
+    "lint": "./node_modules/.bin/eslint .",
+    "verify": "sonarqube-verify",
+    "nodemon": "nodemon app.js"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^10.1.0",
+    "nyc": "^15.1.0"
   },
   "dependencies": {
     "@cloudant/cloudant": "^4.2.3",
-    "async-await-retry": "^1.0.4",
+    "async-await-retry": "^1.2.4",
     "body-parser": "^1.19.0",
-    "couchimport": "^1.4.1",
+    "couchimport": "^1.6.1",
     "express": "^4.17.1",
-    "nano": "^9.0.3",
-    "node-couchdb": "^1.3.0"
+    "fs": "^0.0.1-security",
+    "nano": "^10.1.2",
+    "node-couchdb": "^1.3.0",
+    "path": "^0.12.7",
+    "util": "^0.12.5"
   },
   "author": "Sai Vennam",
   "engines": {
