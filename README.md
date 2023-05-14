@@ -1,4 +1,4 @@
-# Example Health - Node.js Database Adapter for Cloudant
+# Icesi Health - Node.js Database Adapter for Cloudant
 
 1. Set `CLOUDANT_URL` to Cloudant connection details.
 
