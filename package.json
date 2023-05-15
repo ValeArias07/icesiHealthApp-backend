@@ -10,9 +10,7 @@
     "coverage": "nyc --reporter=lcov npm run test",
     "coverage-lcov": "./node_modules/.bin/nyc -r cobertura -r text-summary -r lcov npm test",
     "build": "webpack -p",
-    "lint": "./node_modules/.bin/eslint .",
-    "verify": "sonarqube-verify",
-    "nodemon": "nodemon app.js"
+    "lint": "./node_modules/.bin/eslint ."
   },
   "devDependencies": {
     "chai": "^4.3.4",
