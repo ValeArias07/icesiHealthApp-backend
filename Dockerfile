@@ -27,7 +27,6 @@ RUN npm install -g npm@8.5.1
 # Install dependencies
 RUN npm install --include=dev
 
-
 # Remove node_modules
 RUN rm -rf node_modules
 
