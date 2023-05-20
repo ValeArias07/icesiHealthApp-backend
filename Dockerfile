@@ -18,7 +18,7 @@ RUN git clone https://github.com/ValeArias07/icesiHealthApp-backend
 WORKDIR /usr/icesiHealthApp-backend/
 
 # Add env vars
-ENV PORT 3000
+ENV PORT 8089
 EXPOSE $PORT
 
 # Update npm version and install dependencies
