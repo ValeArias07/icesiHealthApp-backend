@@ -12,7 +12,9 @@ RUN apt install git
 WORKDIR /usr
 
 # Add env vars
-ENV PORT 
+
+ARG PORT
+ENV PORT  ${PORT}
 ENV USER 
 ENV REPO
 ENV PASSWORD 
