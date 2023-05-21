@@ -14,6 +14,7 @@
 
 1. Run `npm start`.
 
+### En el dockerfile
 ENV USER admin
 ENV PASSWORD password
 ENV DATABASE_URL http://$USER:$PASSWORD@my-couchdb:5984
@@ -28,5 +29,8 @@ sudo docker volume create couchdb_data
 sudo docker run -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=password --name my-couchdb -v couchdb_data:/opt/couchdb/data couchdb:3
 ```
 ```bash 
-sudo docker run -p 5000:5000 --name nodeback --link my-couchdb:couchdb underdotcom/icesihealthapp-back:0.1
+sudo docker run -p 8089:8089 --name nodeback --link my-couchdb:couchdb valejo/icesihealthapp-back:0.1
 ```
+
+### Prueba de la conexión con la base de datos
+http://localhost:8089/getInfo/patients/ef5335dd-db17-491e-8150-20ce24712b06
