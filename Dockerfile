@@ -11,19 +11,11 @@ RUN apt install git
 # Set workdir
 WORKDIR /usr
 
-ENV REPO ${REPOSITORY}
 # Clone repo
 RUN git clone $REPO
 
 # Set workdir
 WORKDIR /usr/icesiHealthApp-backend/
-
-# Add env vars
-ENV PORT ${PORT}
-ENV USER ${DB_USER}
-ENV PASSWORD ${DB_PASSWORD}
-ENV COUCHDB_DIR ${COUCH_DB_DIR}
-ENV DATABASE_URL https://$USER:$PASSWORD@$COUCHDB_DIR
 
 # Expose port
 EXPOSE $PORT
