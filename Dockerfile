@@ -11,8 +11,9 @@ RUN apt install git
 # Set workdir
 WORKDIR /usr
 
+ENV REPO ${REPOSITORY}
 # Clone repo
-RUN git clone ${REPOSITORY}
+RUN git clone $REPO
 
 # Set workdir
 WORKDIR /usr/icesiHealthApp-backend/
