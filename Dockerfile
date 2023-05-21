@@ -12,13 +12,13 @@ RUN apt install git
 WORKDIR /usr
 
 # Clone repo
-RUN git clone $REPO
+RUN git clone REPO
 
 # Set workdir
 WORKDIR /usr/icesiHealthApp-backend/
 
 # Expose port
-EXPOSE $PORT
+EXPOSE PORT
 
 # Update npm version and install dependencies
 RUN npm install -g npm@8.5.1
