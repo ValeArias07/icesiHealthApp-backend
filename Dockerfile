@@ -1,12 +1,12 @@
-FROM node:14-alpine
+FROM node:20
 
-RUN apk update
+RUN apt update
 
 # Install bash
-RUN apk add bash
+RUN apt install bash
 
 # Download and install git
-RUN apk add git
+RUN apt install git
 
 # Set workdir
 WORKDIR /usr
@@ -19,6 +19,11 @@ WORKDIR /usr/icesiHealthApp-backend/
 
 # Add env vars
 ENV PORT 8089
+ENV USER admin
+ENV PASSWORD password
+ENV DATABASE_URL http://$USER:$PASSWORD@my-couchdb:5984
+
+# Expose port
 EXPOSE $PORT
 
 # Update npm version and install dependencies
@@ -34,5 +39,8 @@ RUN rm -rf node_modules
 RUN npm install express@4.18.2
 RUN npm install cors@2.8.5
 
+RUN npm build
+
 # Entrypoint
-CMD ["node", "app.js"]
+# CMD ["node", "app.js"]
+CMD ["npm", "start"]
