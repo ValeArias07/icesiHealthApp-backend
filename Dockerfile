@@ -21,7 +21,7 @@ WORKDIR /usr/icesiHealthApp-backend/
 ENV PORT 8089
 ENV USER admin
 ENV PASSWORD password
-ENV COUCHDB_DIR icesihealth-couch-db.ashystone-916b9e78.eastus.azurecontainerapps.io
+ENV COUCHDB_DIR icesihealth-couch-db.salmongrass-4a3f7115.eastus.azurecontainerapps.io
 ENV DATABASE_URL https://$USER:$PASSWORD@$COUCHDB_DIR
 
 # Expose port
