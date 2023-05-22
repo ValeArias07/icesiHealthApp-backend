@@ -11,19 +11,22 @@ RUN apt install git
 # Set workdir
 WORKDIR /usr
 
-# Clone repo
-RUN git clone https://github.com/ValeArias07/icesiHealthApp-backend
-
-# Set workdir
-WORKDIR /usr/icesiHealthApp-backend/
-
 # Add env vars
 ARG PORT
+ARG REPOSITORY
 ENV ENV_PORT $PORT
+ENV ENV_REPOSITORY $REPOSITORY
+
 ENV USER admin
 ENV PASSWORD password
 ENV COUCHDB_DIR icesihealth-couch-db.ashybush-0bba524f.eastus.azurecontainerapps.io
 ENV DATABASE_URL https://$USER:$PASSWORD@$COUCHDB_DIR
+
+# Clone repo
+RUN git clone $ENV_REPOSITORY
+
+# Set workdir
+WORKDIR /usr/icesiHealthApp-backend/
 
 # Expose port
 EXPOSE $ENV_PORT
