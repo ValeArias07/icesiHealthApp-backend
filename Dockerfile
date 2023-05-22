@@ -18,14 +18,15 @@ RUN git clone https://github.com/ValeArias07/icesiHealthApp-backend
 WORKDIR /usr/icesiHealthApp-backend/
 
 # Add env vars
-ENV PORT 8089
+ARG PORT
+ENV ENV_PORT $PORT
 ENV USER admin
 ENV PASSWORD password
 ENV COUCHDB_DIR icesihealth-couch-db.ashybush-0bba524f.eastus.azurecontainerapps.io
 ENV DATABASE_URL https://$USER:$PASSWORD@$COUCHDB_DIR
 
 # Expose port
-EXPOSE $PORT
+EXPOSE $ENV_PORT
 
 # Update npm version and install dependencies
 RUN npm install -g npm@8.5.1
